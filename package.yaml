@@ -1,0 +1,35 @@
+name:                VerseExprGraph
+version:             0.1.0
+github:              "AHaliq/VerseExprGraph"
+license:             BSD3
+author:              "abdul haliq"
+maintainer:          "liqo12@hotmail.com"
+copyright:           "mit"
+
+description:         Please see the README on GitHub at <https://github.com/AHaliq/VerseExprGraph#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- aws-lambda-haskell-runtime >= 3.0.0
+- aeson
+
+library:
+  source-dirs: src
+
+executables:
+  bootstrap:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -O2
+    - -with-rtsopts=-N
+    dependencies:
+    - VerseExprGraph
+
+default-extensions:
+  - RecordWildCards
+  - OverloadedLists
+  - OverloadedStrings
+  - DeriveGeneric
